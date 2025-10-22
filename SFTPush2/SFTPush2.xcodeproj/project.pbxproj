@@ -1,0 +1,432 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E1E1E1E1E1E1E1E1E1E1E01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A2A2A2A2A2A2A2A2A2A01 /* AppDelegate.swift */; };
+		1E1E1E1E1E1E1E1E1E1E1E02 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A2A2A2A2A2A2A2A2A2A02 /* main.swift */; };
+		1E1E1E1E1E1E1E1E1E1E1E03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A2A2A2A2A2A2A2A2A2A2A03 /* Assets.xcassets */; };
+		D0D0D0D0D0D0D0D0D0D0D001 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C0C0C0C0C0C0C0C0C0C001 /* Preferences.swift */; };
+		D0D0D0D0D0D0D0D0D0D0D002 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C0C0C0C0C0C0C0C0C0C002 /* StatusBarController.swift */; };
+		D0D0D0D0D0D0D0D0D0D0D003 /* Settings/SettingsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C0C0C0C0C0C0C0C0C0C003 /* Settings/SettingsWindowController.swift */; };
+		D0D0D0D0D0D0D0D0D0D0D004 /* Settings/SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C0C0C0C0C0C0C0C0C0C004 /* Settings/SettingsViewController.swift */; };
+		D0D0D0D0D0D0D0D0D0D0D005 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C0C0C0C0C0C0C0C0C0C005 /* Localization.swift */; };
+		D0D0D0D0D0D0D0D0D0D0D006 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = C0C0C0C0C0C0C0C0C0C0C006 /* Localizable.xcstrings */; };
+		E0E0E0E0E0E0E0E0E0E0E001 /* Settings/GeneralSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F0F0F0F0F0F0F0F0F0F001 /* Settings/GeneralSettingsViewController.swift */; };
+		E0E0E0E0E0E0E0E0E0E0E002 /* Settings/SFTPSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F0F0F0F0F0F0F0F0F0F002 /* Settings/SFTPSettingsViewController.swift */; };
+		E0E0E0E0E0E0E0E0E0E0E003 /* Settings/ClipboardHotkeysSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F0F0F0F0F0F0F0F0F0F003 /* Settings/ClipboardHotkeysSettingsViewController.swift */; };
+		/* EEEEFFFFEEEFFFFEEEFFFF01 removed OriginalAssets.xcassets in Resources */
+		FA041F642EA6B4C800DA8155 /* FolderWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA041F622EA6B4C800DA8155 /* FolderWatcher.swift */; };
+		FA041F652EA6B4C800DA8155 /* UploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA041F632EA6B4C800DA8155 /* UploadService.swift */; };
+		FA041F672EA6BBDC00DA8155 /* UploadNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA041F662EA6BBDC00DA8155 /* UploadNotifications.swift */; };
+		FA041F6B2EA6BC4400DA8155 /* ClipboardUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA041F682EA6BC4400DA8155 /* ClipboardUploader.swift */; };
+		FA041F6C2EA6BC4400DA8155 /* UploadFileNaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA041F692EA6BC4400DA8155 /* UploadFileNaming.swift */; };
+		FA041F712EA6D2D300DA8155 /* HotkeyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA041F702EA6D2D300DA8155 /* HotkeyCenter.swift */; };
+		FA041F732EA6D89000DA8155 /* SystemIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA041F722EA6D89000DA8155 /* SystemIntegration.swift */; };
+		FA041F742EA6D2D400DA8155 /* StatusItemDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA041F752EA6D2D400DA8155 /* StatusItemDragView.swift */; };
+		FA34855C2EA7EAC70060DBA8 /* mft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA34855B2EA7EAC70060DBA8 /* mft.framework */; };
+		FA34855D2EA7EAC70060DBA8 /* mft.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA34855B2EA7EAC70060DBA8 /* mft.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA3485622EA81DDB0060DBA8 /* UploadHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3485612EA81DDB0060DBA8 /* UploadHistory.swift */; };
+		FA3485642EA820940060DBA8 /* HistoryMenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3485632EA820940060DBA8 /* HistoryMenuItemView.swift */; };
+			FA7777702EA900000060DBA8 /* LaunchAtLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77776F2EA900000060DBA8 /* LaunchAtLogin.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA330A432EA82DAC0062630B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA34854C2EA7EA120060DBA8 /* mft.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C1D2B2BC27A3EE09004D9ACE;
+			remoteInfo = mft;
+		};
+		FA330A452EA82DAC0062630B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA34854C2EA7EA120060DBA8 /* mft.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C1D2B2C627A3EE09004D9ACE;
+			remoteInfo = mftTests;
+		};
+		FA330A472EA82DAC0062630B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA34854C2EA7EA120060DBA8 /* mft.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C10B3EBF27A7D05200A19857;
+			remoteInfo = "mft ios";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FA34855E2EA7EAC70060DBA8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FA34855D2EA7EAC70060DBA8 /* mft.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2A2A2A2A2A2A2A2A2A2A2A01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2A2A2A2A2A2A2A2A2A2A2A02 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		2A2A2A2A2A2A2A2A2A2A2A03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3B3B3B3B3B3B3B3B3B3B3B01 /* SFTPush2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFTPush2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		/* AAAABBBBCCCCDDDDEEEEFFFF01 removed OriginalAssets.xcassets reference */
+		C0C0C0C0C0C0C0C0C0C0C001 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		C0C0C0C0C0C0C0C0C0C0C002 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
+		C0C0C0C0C0C0C0C0C0C0C003 /* Settings/SettingsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings/SettingsWindowController.swift; sourceTree = "<group>"; };
+		C0C0C0C0C0C0C0C0C0C0C004 /* Settings/SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings/SettingsViewController.swift; sourceTree = "<group>"; };
+		C0C0C0C0C0C0C0C0C0C0C005 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		C0C0C0C0C0C0C0C0C0C0C006 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		F0F0F0F0F0F0F0F0F0F0F001 /* Settings/GeneralSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings/GeneralSettingsViewController.swift; sourceTree = "<group>"; };
+		F0F0F0F0F0F0F0F0F0F0F002 /* Settings/SFTPSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings/SFTPSettingsViewController.swift; sourceTree = "<group>"; };
+		F0F0F0F0F0F0F0F0F0F0F003 /* Settings/ClipboardHotkeysSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings/ClipboardHotkeysSettingsViewController.swift; sourceTree = "<group>"; };
+		FA041F622EA6B4C800DA8155 /* FolderWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderWatcher.swift; sourceTree = "<group>"; };
+		FA041F632EA6B4C800DA8155 /* UploadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadService.swift; sourceTree = "<group>"; };
+		FA041F662EA6BBDC00DA8155 /* UploadNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadNotifications.swift; sourceTree = "<group>"; };
+		FA041F682EA6BC4400DA8155 /* ClipboardUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardUploader.swift; sourceTree = "<group>"; };
+		FA041F692EA6BC4400DA8155 /* UploadFileNaming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadFileNaming.swift; sourceTree = "<group>"; };
+		FA041F702EA6D2D300DA8155 /* HotkeyCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyCenter.swift; sourceTree = "<group>"; };
+		FA041F722EA6D89000DA8155 /* SystemIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemIntegration.swift; sourceTree = "<group>"; };
+		FA041F752EA6D2D400DA8155 /* StatusItemDragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemDragView.swift; sourceTree = "<group>"; };
+		FA34854C2EA7EA120060DBA8 /* mft.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mft.xcodeproj; path = "../mft-main/mft.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		FA34855B2EA7EAC70060DBA8 /* mft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = mft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA3485612EA81DDB0060DBA8 /* UploadHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadHistory.swift; sourceTree = "<group>"; };
+		FA3485632EA820940060DBA8 /* HistoryMenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryMenuItemView.swift; sourceTree = "<group>"; };
+			FA77776F2EA900000060DBA8 /* LaunchAtLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLogin.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C4C4C4C4C4C4C4C4C4C4C01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA34855C2EA7EAC70060DBA8 /* mft.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5D5D5D5D5D5D5D5D5D5D5D01 = {
+			isa = PBXGroup;
+			children = (
+				6E6E6E6E6E6E6E6E6E6E6E01 /* Sources */,
+				FA34855A2EA7EAC70060DBA8 /* Frameworks */,
+				7F7F7F7F7F7F7F7F7F7F7F01 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6E6E6E6E6E6E6E6E6E6E6E01 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2A2A2A2A2A2A2A2A2A2A2A01 /* AppDelegate.swift */,
+				2A2A2A2A2A2A2A2A2A2A2A02 /* main.swift */,
+				C0C0C0C0C0C0C0C0C0C0C005 /* Localization.swift */,
+				C0C0C0C0C0C0C0C0C0C0C001 /* Preferences.swift */,
+				FA041F702EA6D2D300DA8155 /* HotkeyCenter.swift */,
+				C0C0C0C0C0C0C0C0C0C0C002 /* StatusBarController.swift */,
+				FA041F752EA6D2D400DA8155 /* StatusItemDragView.swift */,
+				C0C0C0C0C0C0C0C0C0C0C003 /* Settings/SettingsWindowController.swift */,
+				F0F0F0F0F0F0F0F0F0F0F001 /* Settings/GeneralSettingsViewController.swift */,
+				F0F0F0F0F0F0F0F0F0F0F002 /* Settings/SFTPSettingsViewController.swift */,
+				F0F0F0F0F0F0F0F0F0F0F003 /* Settings/ClipboardHotkeysSettingsViewController.swift */,
+				C0C0C0C0C0C0C0C0C0C0C004 /* Settings/SettingsViewController.swift */,
+				FA041F722EA6D89000DA8155 /* SystemIntegration.swift */,
+				FA041F622EA6B4C800DA8155 /* FolderWatcher.swift */,
+				FA041F682EA6BC4400DA8155 /* ClipboardUploader.swift */,
+				FA041F692EA6BC4400DA8155 /* UploadFileNaming.swift */,
+				FA041F632EA6B4C800DA8155 /* UploadService.swift */,
+				FA041F662EA6BBDC00DA8155 /* UploadNotifications.swift */,
+				FA3485612EA81DDB0060DBA8 /* UploadHistory.swift */,
+				FA3485632EA820940060DBA8 /* HistoryMenuItemView.swift */,
+					FA77776F2EA900000060DBA8 /* LaunchAtLogin.swift */,
+				2A2A2A2A2A2A2A2A2A2A2A03 /* Assets.xcassets */,
+				C0C0C0C0C0C0C0C0C0C0C006 /* Localizable.xcstrings */,
+				/* OriginalAssets.xcassets removed */
+				FA34854C2EA7EA120060DBA8 /* mft.xcodeproj */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		7F7F7F7F7F7F7F7F7F7F7F01 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B3B3B3B3B3B3B3B3B3B3B01 /* SFTPush2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA330A3E2EA82DAC0062630B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA330A442EA82DAC0062630B /* mft.framework */,
+				FA330A462EA82DAC0062630B /* mftTests.xctest */,
+				FA330A482EA82DAC0062630B /* mft.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA34855A2EA7EAC70060DBA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA34855B2EA7EAC70060DBA8 /* mft.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8A8A8A8A8A8A8A8A8A8A8A01 /* SFTPush2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B9B9B9B9B9B9B9B9B9B9B01 /* Build configuration list for PBXNativeTarget "SFTPush2" */;
+			buildPhases = (
+				ACAAAAAABBBBBBBBCCCCCC01 /* Sources */,
+				4C4C4C4C4C4C4C4C4C4C4C01 /* Frameworks */,
+				DDDDDDDDDEEEEEEEEFFFFFF01 /* Resources */,
+				FA34855E2EA7EAC70060DBA8 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SFTPush2;
+			productName = SFTPush2;
+			productReference = 3B3B3B3B3B3B3B3B3B3B3B01 /* SFTPush2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1A1A1A1A1A1A1A1A1A1A101 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					8A8A8A8A8A8A8A8A8A8A8A01 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+				};
+			};
+			buildConfigurationList = B2B2B2B2B2B2B2B2B2B2B201 /* Build configuration list for PBXProject "SFTPush2" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5D5D5D5D5D5D5D5D5D5D5D01;
+			productRefGroup = 7F7F7F7F7F7F7F7F7F7F7F01 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FA330A3E2EA82DAC0062630B /* Products */;
+					ProjectRef = FA34854C2EA7EA120060DBA8 /* mft.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				8A8A8A8A8A8A8A8A8A8A8A01 /* SFTPush2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FA330A442EA82DAC0062630B /* mft.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = mft.framework;
+			remoteRef = FA330A432EA82DAC0062630B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA330A462EA82DAC0062630B /* mftTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = mftTests.xctest;
+			remoteRef = FA330A452EA82DAC0062630B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA330A482EA82DAC0062630B /* mft.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = mft.framework;
+			remoteRef = FA330A472EA82DAC0062630B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DDDDDDDDDEEEEEEEEFFFFFF01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E1E1E1E1E1E1E1E1E1E1E03 /* Assets.xcassets in Resources */,
+				D0D0D0D0D0D0D0D0D0D0D006 /* Localizable.xcstrings in Resources */,
+				/* OriginalAssets.xcassets in Resources removed */
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ACAAAAAABBBBBBBBCCCCCC01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA041F712EA6D2D300DA8155 /* HotkeyCenter.swift in Sources */,
+				1E1E1E1E1E1E1E1E1E1E1E01 /* AppDelegate.swift in Sources */,
+				1E1E1E1E1E1E1E1E1E1E1E02 /* main.swift in Sources */,
+				D0D0D0D0D0D0D0D0D0D0D001 /* Preferences.swift in Sources */,
+				FA041F6B2EA6BC4400DA8155 /* ClipboardUploader.swift in Sources */,
+				FA041F6C2EA6BC4400DA8155 /* UploadFileNaming.swift in Sources */,
+				D0D0D0D0D0D0D0D0D0D0D002 /* StatusBarController.swift in Sources */,
+				FA041F742EA6D2D400DA8155 /* StatusItemDragView.swift in Sources */,
+				D0D0D0D0D0D0D0D0D0D0D003 /* Settings/SettingsWindowController.swift in Sources */,
+				D0D0D0D0D0D0D0D0D0D0D004 /* Settings/SettingsViewController.swift in Sources */,
+				FA3485622EA81DDB0060DBA8 /* UploadHistory.swift in Sources */,
+				E0E0E0E0E0E0E0E0E0E0E001 /* Settings/GeneralSettingsViewController.swift in Sources */,
+				E0E0E0E0E0E0E0E0E0E0E002 /* Settings/SFTPSettingsViewController.swift in Sources */,
+				E0E0E0E0E0E0E0E0E0E0E003 /* Settings/ClipboardHotkeysSettingsViewController.swift in Sources */,
+				D0D0D0D0D0D0D0D0D0D0D005 /* Localization.swift in Sources */,
+				FA041F642EA6B4C800DA8155 /* FolderWatcher.swift in Sources */,
+				FA041F672EA6BBDC00DA8155 /* UploadNotifications.swift in Sources */,
+				FA3485642EA820940060DBA8 /* HistoryMenuItemView.swift in Sources */,
+				FA041F732EA6D89000DA8155 /* SystemIntegration.swift in Sources */,
+				FA041F652EA6B4C800DA8155 /* UploadService.swift in Sources */,
+					FA7777702EA900000060DBA8 /* LaunchAtLogin.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C3C3C3C3C3C3C3C3C3C3C301 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = SFTPush2;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				USE_HEADERMAP = YES;
+			};
+			name = Debug;
+		};
+		C4C4C4C4C4C4C4C4C4C4C401 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = SFTPush2;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				USE_HEADERMAP = YES;
+			};
+			name = Release;
+		};
+		C5C5C5C5C5C5C5C5C5C5C501 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_ENTITLEMENTS = SFTPush2.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K65354AV6X;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_CFBundleDocumentTypes = "{\n    CFBundleTypeName = \"All Files\";\n    CFBundleTypeRole = Viewer;\n    LSHandlerRank = Owner;\n    LSItemContentTypes =     (\n        \"public.data\"\n    );\n}";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.SFTPush2;
+				PRODUCT_NAME = SFTPush2;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				USE_HEADERMAP = YES;
+			};
+			name = Debug;
+		};
+		C6C6C6C6C6C6C6C6C6C6C601 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_ENTITLEMENTS = SFTPush2.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K65354AV6X;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_CFBundleDocumentTypes = "{\n    CFBundleTypeName = \"All Files\";\n    CFBundleTypeRole = Viewer;\n    LSHandlerRank = Owner;\n    LSItemContentTypes =     (\n        \"public.data\"\n    );\n}";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.SFTPush2;
+				PRODUCT_NAME = SFTPush2;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				USE_HEADERMAP = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9B9B9B9B9B9B9B9B9B9B9B01 /* Build configuration list for PBXNativeTarget "SFTPush2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5C5C5C5C5C5C5C5C5C5C501 /* Debug */,
+				C6C6C6C6C6C6C6C6C6C6C601 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2B2B2B2B2B2B2B2B2B2B201 /* Build configuration list for PBXProject "SFTPush2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3C3C3C3C3C3C3C3C3C3C301 /* Debug */,
+				C4C4C4C4C4C4C4C4C4C4C401 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1A1A1A1A1A1A1A1A1A1A101 /* Project object */;
+}
