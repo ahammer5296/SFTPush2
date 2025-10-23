@@ -290,6 +290,23 @@
         }
       }
     },
+    "settings.close_monosnap_delay_ms" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Задержка перед закрытием Monosnap (мс)"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Задержка перед закрытием Monosnap (мс)"
+          }
+        }
+      }
+    },
     "settings.copy_before_upload" : {
       "extractionState" : "stale",
       "localizations" : {

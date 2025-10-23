@@ -156,7 +156,11 @@ final class ClipboardUploader {
                 }
                 if item.shouldDeleteAfter { self.saveToUploadedIfNeeded(originalTempURL: item.url) }
                 if self.preferences.closeMonosnapAfterUpload && SystemIntegration.isFrontAppMonosnap() {
-                    SystemIntegration.sendCmdW()
+                    let delayMs = max(0, self.preferences.monosnapCloseDelayMs)
+                    let delay: DispatchTimeInterval = .milliseconds(delayMs)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                        SystemIntegration.sendCmdW()
+                    }
                 }
             case .failure(let error):
                 if isBatch {

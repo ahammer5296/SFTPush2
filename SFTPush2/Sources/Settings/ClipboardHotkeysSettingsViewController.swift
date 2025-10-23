@@ -49,6 +49,13 @@ final class ClipboardHotkeysSettingsViewController: NSViewController {
     private let copyBeforeUploadCheckbox = NSButton(checkboxWithTitle: L("settings.copy_before_upload"), target: nil, action: nil)
     private let copyOnlyFromMonosnapCheckbox = NSButton(checkboxWithTitle: L("settings.copy_only_from_monosnap"), target: nil, action: nil)
     private let closeMonosnapCheckbox = NSButton(checkboxWithTitle: L("settings.close_monosnap_after_upload"), target: nil, action: nil)
+    private let closeMonosnapDelayLabel = NSTextField(labelWithString: L("settings.close_monosnap_delay_ms"))
+    private let closeMonosnapDelayField: NSTextField = {
+        let f = NSTextField()
+        f.alignment = .right
+        f.placeholderString = "150"
+        return f
+    }()
     private let saveClipboardToUploadedCheckbox = NSButton(checkboxWithTitle: L("settings.save_clipboard_to_uploaded"), target: nil, action: nil)
     private let accessibilityInfoLabel: NSTextField = {
         // Kept for potential future detailed text; hidden by default.
@@ -79,6 +86,9 @@ final class ClipboardHotkeysSettingsViewController: NSViewController {
         load()
         wire()
         addHotkeyCapture()
+        // Live updates for delay field
+        closeMonosnapDelayField.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(onDelayChanged(_:)), name: NSControl.textDidChangeNotification, object: closeMonosnapDelayField)
     }
 
     private func buildUI() {
@@ -143,7 +153,14 @@ final class ClipboardHotkeysSettingsViewController: NSViewController {
         ])
 
         // Copy box content
-        let copyChildrenStack = NSStackView(views: [copyOnlyFromMonosnapCheckbox, closeMonosnapCheckbox])
+        let delayRow = NSStackView(views: [closeMonosnapDelayLabel, closeMonosnapDelayField])
+        delayRow.alignment = .firstBaseline
+        delayRow.spacing = 8
+        // Make delay field compact
+        closeMonosnapDelayField.translatesAutoresizingMaskIntoConstraints = false
+        closeMonosnapDelayField.widthAnchor.constraint(equalToConstant: 60).isActive = true
+
+        let copyChildrenStack = NSStackView(views: [copyOnlyFromMonosnapCheckbox, closeMonosnapCheckbox, delayRow])
         copyChildrenStack.orientation = .vertical
         copyChildrenStack.alignment = .leading
         copyChildrenStack.spacing = 8
@@ -222,6 +239,7 @@ final class ClipboardHotkeysSettingsViewController: NSViewController {
         closeMonosnapCheckbox.target = self; closeMonosnapCheckbox.action = #selector(onCloseMonosnap)
         saveClipboardToUploadedCheckbox.target = self; saveClipboardToUploadedCheckbox.action = #selector(onSaveClipboardToUploaded)
         accessibilityOpenButton.target = self; accessibilityOpenButton.action = #selector(onOpenAccessibility)
+        closeMonosnapDelayField.target = self; closeMonosnapDelayField.action = #selector(onCloseMonosnapDelay)
     }
 
     private func load() {
@@ -238,9 +256,11 @@ final class ClipboardHotkeysSettingsViewController: NSViewController {
         copyOnlyFromMonosnapCheckbox.state = prefs.copyOnlyFromMonosnap ? .on : .off
         closeMonosnapCheckbox.state = prefs.closeMonosnapAfterUpload ? .on : .off
         saveClipboardToUploadedCheckbox.state = prefs.clipboardSaveToUploaded ? .on : .off
+        closeMonosnapDelayField.stringValue = String(prefs.monosnapCloseDelayMs)
         // Enable nested options only when parent is on
         copyOnlyFromMonosnapCheckbox.isEnabled = prefs.copyBeforeUpload
         closeMonosnapCheckbox.isEnabled = prefs.copyBeforeUpload
+        updateDelayFieldState()
         updateAccessibilityStatus()
     }
 
@@ -268,11 +288,13 @@ final class ClipboardHotkeysSettingsViewController: NSViewController {
         let enabled = prefs.copyBeforeUpload
         copyOnlyFromMonosnapCheckbox.isEnabled = enabled
         closeMonosnapCheckbox.isEnabled = enabled
+        updateDelayFieldState()
         // Do not change the values of nested checkboxes when disabling
     }
     @objc private func onCopyOnlyFromMonosnap() { prefs.copyOnlyFromMonosnap = (copyOnlyFromMonosnapCheckbox.state == .on) }
-    @objc private func onCloseMonosnap() { prefs.closeMonosnapAfterUpload = (closeMonosnapCheckbox.state == .on) }
+    @objc private func onCloseMonosnap() { prefs.closeMonosnapAfterUpload = (closeMonosnapCheckbox.state == .on); updateDelayFieldState() }
     @objc private func onSaveClipboardToUploaded() { prefs.clipboardSaveToUploaded = (saveClipboardToUploadedCheckbox.state == .on) }
+    @objc private func onCloseMonosnapDelay() { syncDelayFieldToPreferences() }
 }
 
 private extension ClipboardHotkeysSettingsViewController {
@@ -289,6 +311,32 @@ private extension ClipboardHotkeysSettingsViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
             self?.updateAccessibilityStatus()
         }
+    }
+}
+
+private extension ClipboardHotkeysSettingsViewController {
+    func updateDelayFieldState() {
+        let enabled = prefs.copyBeforeUpload && prefs.closeMonosnapAfterUpload
+        closeMonosnapDelayLabel.isEnabled = enabled
+        closeMonosnapDelayField.isEnabled = enabled
+    }
+}
+
+extension ClipboardHotkeysSettingsViewController: NSTextFieldDelegate {
+    func controlTextDidEndEditing(_ obj: Notification) {
+        if (obj.object as? NSTextField) === closeMonosnapDelayField { syncDelayFieldToPreferences() }
+    }
+
+    @objc private func onDelayChanged(_ note: Notification) {
+        if (note.object as? NSTextField) === closeMonosnapDelayField { syncDelayFieldToPreferences() }
+    }
+
+    fileprivate func syncDelayFieldToPreferences() {
+        let trimmed = closeMonosnapDelayField.stringValue.trimmingCharacters(in: .whitespacesAndNewlines)
+        let value = Int(trimmed) ?? prefs.monosnapCloseDelayMs
+        let clamped = max(0, min(2000, value))
+        prefs.monosnapCloseDelayMs = clamped
+        closeMonosnapDelayField.stringValue = String(clamped)
     }
 }
 

@@ -37,6 +37,7 @@ final class Preferences {
         case historyMaxEntries
         case copyURLAfterUpload
         case openURLAfterUpload
+        case monosnapCloseDelayMs
     }
 
     private let defaults: UserDefaults
@@ -78,6 +79,7 @@ final class Preferences {
             ,Key.historyMaxEntries.rawValue: 10
             ,Key.copyURLAfterUpload.rawValue: true
             ,Key.openURLAfterUpload.rawValue: false
+            ,Key.monosnapCloseDelayMs.rawValue: 150
         ])
     }
 
@@ -246,6 +248,18 @@ final class Preferences {
     var openURLAfterUpload: Bool {
         get { defaults.bool(forKey: Key.openURLAfterUpload.rawValue) }
         set { defaults.set(newValue, forKey: Key.openURLAfterUpload.rawValue) }
+    }
+
+    // MARK: - Monosnap behavior
+    var monosnapCloseDelayMs: Int {
+        get {
+            let v = defaults.integer(forKey: Key.monosnapCloseDelayMs.rawValue)
+            return min(max(0, v), 2000)
+        }
+        set {
+            let clamped = min(max(0, newValue), 2000)
+            defaults.set(clamped, forKey: Key.monosnapCloseDelayMs.rawValue)
+        }
     }
 }
 
