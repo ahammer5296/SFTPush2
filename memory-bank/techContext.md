@@ -4,25 +4,27 @@
 - Swift 5 / AppKit (macOS)
 
 ## Build & Run
-- Open `MenuBarProbe/MenuBarProbe.xcodeproj`
-- Select target `MenuBarProbe`
+- Open `SFTPush2/SFTPush2.xcodeproj`
+- Select target `SFTPush2`
 - Set Team if required → Run
 
 ## Repository Structure (key parts)
-- `MenuBarProbe/` — minimal macOS app to validate UI/UX and patterns
-- `Sources/` within target — controllers, settings VCs, localization, assets
-- `SFTPush.xcodeproj/` — original app (integrates `mft` subproject)
+- `SFTPush2/` — main macOS app target and sources
+- `mft-main/` — SFTP framework project (libssh/openssl)
+- `memory-bank/` — knowledge base for development
+- `agent.md` — agent guidance
 
 ## Dependencies
-- System frameworks only for the probe project
-- Original app links `mft` (subproject) + libssh/openssl (prebuilt)
- - Carbon (RegisterEventHotKey) for global hotkeys
+- System frameworks (AppKit, CoreGraphics, ApplicationServices)
+- `mft.framework` (from `mft-main`) for SFTP; libssh/openssl inside
+- Carbon (RegisterEventHotKey) for global hotkeys
 
 ## Tooling / Conventions
 - Localization via `Localizable.xcstrings` + helper `L(_:)`
 - Auto Layout programmatic (NSStackView + constraints)
 - Preferences via `UserDefaults` wrapper (`Preferences`)
- - Hotkeys stored as keyCode + modifier flags for layout independence
+  - Hotkeys stored as keyCode + modifier flags for layout independence
+  - Monosnap behavior keys: `copyBeforeUpload`, `closeMonosnapAfterUpload`, `monosnapCloseDelayMs` (0–2000 ms)
 
 ## Testing Strategy (initial)
 - Manual verification of UI sections and menu behaviors
@@ -35,7 +37,7 @@
 ## Secrets / Credentials
 - For now SFTP password is in UserDefaults (development only)
 - Future: move to Keychain via `SecItem` APIs
- - Accessibility permission (Automation) required for CGEvent key simulation (Cmd+C/Cmd+W)
+- Accessibility permission (Automation) required for CGEvent key simulation (Cmd+C/Cmd+W)
 - Project Structure & Build
   - Renamed to SFTPush2 (target + product), cleaned repo to memory-bank, mft-main, SFTPush2, agent.md
   - Explicit Info.plist at SFTPush2/Info.plist (GENERATE_INFOPLIST_FILE=NO)
@@ -97,3 +99,9 @@
 - Misc recommendations
   - Consider changing LSHandlerRank from Owner→Alternate for public.data before release to avoid claiming ownership of all files
   - Keep Info.plist explicit in repo; include LSApplicationCategoryType and other metadata as needed
+
+## CI/CD & Releases
+- Tags: auto‑tag workflow on pushes to `main` increments minor version (vX.Y → vX.(Y+1)) if HEAD is untagged.
+- Releases: created manually (or via `gh`) from tag; title scheme kept as “SFTPush2 1.0” while tag may be `v1.1`.
+- Asset: ship `SFTPush2.zip` (built .app zipped with parent folder using `ditto`).
+- Notes: maintain `RELEASE_NOTES.md` in repo; include SHA256 and size of the asset.

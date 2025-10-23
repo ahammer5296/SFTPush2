@@ -12,6 +12,7 @@ Always update this file first when starting new work. It reflects the live state
 - History menu with thumbnails + 1s hover preview (popover, left-first), cmd-click opens URL
 - Post-upload options: copy URL to clipboard, open in browser (configurable)
 - SFTP upload via mft with runtime logs; fallback stub logs when mft unavailable
+ - Monosnap integration: optional Cmd+C prior to upload and Cmd+W after upload with configurable delay (ms)
 
 ## Recent Changes
 - Renamed project to SFTPush2; cleaned repo to memory-bank, mft-main, SFTPush2, agent.md
@@ -22,6 +23,9 @@ Always update this file first when starting new work. It reflects the live state
 - New settings: history size, copy URL after upload, open URL after upload
 - Explicit Info.plist, removed stale asset reference; icons restored; target renamed
 - SFTP service logs real mft vs fallback; fixed signing (disable library validation) for dev
+ - Added preference `monosnapCloseDelayMs` (0–2000 ms) and UI in Clipboard & Hotkeys; `ClipboardUploader` applies delay before sending Cmd+W
+ - Localizations and README updated; Release v1.1 (title “SFTPush2 1.0”) published with app zip
+ - Added GitHub Action to auto‑tag on push to `main` (increments minor vX.Y)
 
 ## Next Steps (Shortlist)
 - [x] Drag & drop: status item + Dock
@@ -31,6 +35,7 @@ Always update this file first when starting new work. It reflects the live state
 - [ ] Move SFTP password storage into Keychain
 - [ ] Consider ATS exception or enforce https for thumbnail preview
 - [ ] Port modular settings back to main app if needed
+ - [ ] Optional: auto‑create GitHub Release on new tag and upload built zip
 
 ## Decisions
 - Fixed width window for consistent layout; dynamic height only

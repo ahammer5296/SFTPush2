@@ -9,6 +9,7 @@ Keep this as a living log. Append entries; don’t rewrite history.
 - История загрузок с миниатюрами, превью по наведению, cmd‑клик открывает URL
 - Пакетные загрузки: одно уведомление с итогами (успехи/ошибки, последний файл)
 - Новые настройки: размер истории, копировать URL, открывать URL
+ - Monosnap: опции копирования перед загрузкой и закрытия окна после загрузки с настраиваемой задержкой
 
 ## What works
 - Menu bar icon + menu; Dock icon + animation
@@ -19,6 +20,7 @@ Keep this as a living log. Append entries; don’t rewrite history.
 - Drag & drop: статус‑иконка и Dock (CFBundleDocumentTypes + Apple Events)
 - История: хранится в UserDefaults (JSON), миниатюры, превью, cmd‑клик
 - Пакетные загрузки: одно финальное уведомление с последним URL
+ - Интеграция с Monosnap: Cmd+C (опционально) перед загрузкой; Cmd+W после загрузки, учитывая задержку `monosnapCloseDelayMs`
 
 ## What’s left
 - Notification actions (копировать/открыть из уведомления), deep links
@@ -34,6 +36,7 @@ Keep this as a living log. Append entries; don’t rewrite history.
 - <date>: Created MenuBarProbe; modular settings and animations
 - <date>: Implemented SFTP Upload Service (mft), path/baseURL mapping, factory with fallback
 - <date>: Renamed to SFTPush2, fixed Dock drop (CFBundleDocumentTypes + Apple Events), added history + thumbnails + hover preview, batch summary
+ - <2025‑10‑23>: Добавлена задержка закрытия Monosnap (UI + prefs); обновлены локализации и README; выпущен релиз v1.1 (title "SFTPush2 1.0"); добавлен auto‑tag workflow
 
 ## Decision Changes / Notes
 - Switched from toolbar to segmented control for stability

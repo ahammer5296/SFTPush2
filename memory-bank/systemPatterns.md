@@ -30,6 +30,7 @@ flowchart TD
 ## Critical Paths
 - Upload animation path (status bar + dock)
 - Settings changes → Preferences → UI reactions
+ - Monosnap control path: Preferences.copyBeforeUpload → SystemIntegration.sendCmdC; Preferences.closeMonosnapAfterUpload + monosnapCloseDelayMs → delayed SystemIntegration.sendCmdW
 
 ## Error Handling
 - Prefer non‑fatal UI fallbacks (e.g., text in status button if icon missing)
@@ -51,3 +52,4 @@ flowchart TD
 
 - Post-upload actions
   - Preferences control copy/open behavior; cmd-click on history item forces open regardless of setting
+  - Monosnap close uses a configurable delay (ms) stored in Preferences
